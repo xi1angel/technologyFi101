@@ -11,7 +11,7 @@ class FlightTicketCalculatorGUI:
         self.class_var = tk.StringVar()
         self.total_price_var = tk.StringVar()
 
-        # Создание и размещение элементов управления
+        # Создание элементов управления
         self.label_baggage = ttk.Label(master, text="Выберите опции багажа:")
         self.label_baggage.grid(row=0, column=0, padx=10, pady=10)
 
