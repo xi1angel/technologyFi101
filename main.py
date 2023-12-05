@@ -6,12 +6,10 @@ class FlightTicketCalculatorGUI:
         self.master = master
         master.title("Калькулятор стоимости билета на самолет")
 
-        # Переменные для хранения данных пользователя
         self.baggage_var = tk.IntVar()
         self.class_var = tk.StringVar()
         self.total_price_var = tk.StringVar()
 
-        # Создание элементов управления
         self.label_baggage = ttk.Label(master, text="Выберите опции багажа:")
         self.label_baggage.grid(row=0, column=0, padx=10, pady=10)
 
@@ -33,18 +31,14 @@ class FlightTicketCalculatorGUI:
         self.label_result.grid(row=3, column=0, columnspan=3, pady=10)
 
     def calculate(self):
-        # Цены на опции
         baggage_prices = {0: 0, 20: 1500, 30: 3500}
         class_prices = {"Economy": 1000, "Business": 3200, "First Class": 6400}
 
-        # Получение выбранных опций от пользователя
         selected_baggage = self.baggage_var.get()
         selected_class = self.class_var.get()
 
-        # Рассчет общей стоимости билета
         total_price = baggage_prices[selected_baggage] + class_prices[selected_class]
 
-        # Отображение результата
         result_text = f"Общая стоимость билета: {total_price} рублей."
         self.total_price_var.set(result_text)
 
